@@ -44,93 +44,132 @@
 <h1>Privacy Policy</h1>
 <p class="meta">
   <strong>Fumeto Reader Plus</strong> (package name <code>com.fumeto.reader</code>) for Android<br>
-  Effective date: July 28, 2026
+  Effective date: September 4, 2026 (previous version: July 28, 2026)<br>
+  Source code: <a href="https://github.com/fumetodev/FumetoReaderPlus">github.com/fumetodev/FumetoReaderPlus</a>
 </p>
 
 <div class="summary">
-  <p><strong>The short version:</strong> Fumeto Reader Plus is a local-first app.
-  It has no user accounts, no advertising, and no analytics or tracking, and the
-  developer operates no servers that receive your data. Your comics, reading
-  progress, settings, and translations stay on your device. The app only
-  communicates over the network with services <em>you</em> explicitly configure —
-  such as your own media server or your own translation API account.</p>
+  <p><strong>The short version:</strong> Fumeto Reader Plus is a free, open-source,
+  local-first app. It has no user accounts, no advertising, no purchases, and no
+  analytics or tracking, and the developer operates no servers that receive your
+  data. Your comics, books, reading progress, settings, and translations stay on
+  your device. The app only communicates over the network with services
+  <em>you</em> explicitly configure — such as your own media server or your own
+  translation provider — and with the host it downloads its optional AI model
+  files from.</p>
 </div>
 
 <h2>Who we are</h2>
 <p>Fumeto Reader Plus is developed and published by an independent developer.
 For any privacy question or request, contact:
 <a href="mailto:fumetoreaderdev@gmail.com">fumetoreaderdev@gmail.com</a>.</p>
+<p>The app is open source under the GNU GPL v3. Its complete source code is
+published at
+<a href="https://github.com/fumetodev/FumetoReaderPlus">github.com/fumetodev/FumetoReaderPlus</a>,
+so every statement in this policy can be checked against the code that ships.</p>
 
 <h2>Data stored on your device</h2>
 <p>The app stores the following information locally on your device only:</p>
 <ul>
-  <li>Comic files and libraries you import or create, and their metadata;</li>
+  <li>Comic and e-book files and libraries you import or create, and their
+      metadata;</li>
   <li>Reading progress and library organization;</li>
   <li>App settings and preferences;</li>
-  <li>Translations generated for your pages;</li>
+  <li>Translations generated for your pages, and any edits you make to them;</li>
   <li>Optional server addresses and credentials you enter for your own media
       server (see below);</li>
   <li>Optional API keys you enter for a translation provider (see below);</li>
+  <li>AI model files you download or import for on-device translation (see
+      “Component downloads”);</li>
   <li>Local diagnostic logs (see “Diagnostics and error reports”).</li>
 </ul>
-<p>None of this is transmitted to the developer. You can delete this data at any
-time by removing items in the app, clearing the app’s data in Android settings,
-or uninstalling the app.</p>
+<p>Credentials and API keys are encrypted at rest with a key that never leaves
+the device. None of this data is transmitted to the developer. You can delete
+it at any time by removing items in the app (downloaded models have their own
+delete button in Settings), clearing the app’s data in Android settings, or
+uninstalling the app.</p>
 
 <h2>Network features you control</h2>
-<p>All network features are optional and disabled until you configure them. When
-you use them, data goes only to the destination you chose:</p>
+<p>All network features are optional and disabled until you configure or
+confirm them. When you use them, data goes only to the destination you chose:</p>
 <ul>
   <li><strong>Your own media server.</strong> If you connect a self-hosted comic
       server (such as Komga, Kavita, or YACReaderLibraryServer), the address and
       credentials or API key you enter are stored on your device and sent only
       to that server, in order to browse and fetch your comics from it. The
-      developer never receives them.</li>
-  <li><strong>Cloud translation with your own API key.</strong> The app can
-      translate pages entirely on your device. If you instead choose a
-      cloud-based translation model and provide your own API key (for example,
-      an OpenRouter account), then the pages you choose to translate — the page
-      image and/or text extracted from it, depending on the model — are sent to
-      that provider under your own account and are subject to that provider’s
-      privacy policy. Your key is stored on your
-      device and sent only to that provider. If you only use on-device
-      translation, no page content ever leaves your device.</li>
-  <li><strong>Component downloads.</strong> On-device translation components
-      (model files) are downloaded from static file hosting when you request
-      them. As with any download, the hosting service can see standard web
-      request metadata such as your IP address. No personal content is sent.</li>
+      developer never receives them. If you enter a plain <code>http://</code>
+      address, traffic to that server — including your credentials — is not
+      encrypted on the way there; use <code>https://</code> where your server
+      offers it.</li>
+  <li><strong>Translation with a provider or server you choose.</strong> The
+      app can translate pages entirely on your device, and that is the default.
+      If you instead configure a translation provider — a cloud service under
+      your own API key (for example an OpenRouter account, an Anthropic API
+      key, or any OpenAI-compatible endpoint), or a server you run yourself on
+      your own network (for example Ollama or LM Studio) — then the pages you
+      choose to translate — the page image and/or the text extracted from it,
+      depending on the model — are sent to that destination under your own
+      account and are subject to its privacy policy. Any key you enter is
+      stored on your device and sent only to that provider. If you only use
+      on-device translation, no page content ever leaves your device.</li>
+  <li><strong>Component downloads.</strong> Reading text off a page needs
+      model files that are not included in the app itself: text detection and
+      recognition models and a page-layout model, used by every translation
+      mode, plus the translation model you pick if you translate on-device.
+      They are downloaded from Hugging Face
+      (<a href="https://huggingface.co">huggingface.co</a>) only after you
+      confirm the download — the first time you translate a page, or when you
+      choose a model in Settings. As with any download, the hosting
+      service can see standard web request metadata such as your IP address.
+      No personal content is sent. A model file you import from your own
+      storage instead is copied into the app’s private storage and is never
+      uploaded anywhere.</li>
 </ul>
 
 <h2>Diagnostics and error reports</h2>
 <p>The app keeps a small, recent log of technical errors on your device to help
-diagnose problems. It is never transmitted automatically. If you choose to copy
-a diagnostic report to share (for example, when reporting a bug), the report is
-designed to contain only technical information — app version, device model,
-error messages — and to exclude comic titles, file names, page content, and any
-credentials or API keys.</p>
-
-<h2>Purchases</h2>
-<p>If the app offers paid upgrades, purchases are processed by Google Play’s
-billing system. The developer receives confirmation of what was purchased in
-order to unlock the corresponding features, and never receives your payment
-details. Google’s handling of payment information is described in the
-<a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+diagnose problems. It is never transmitted automatically, and the app contains
+no crash-reporting service. If you choose to copy a diagnostic report to share
+(for example, when reporting a bug), the report is designed to contain only
+technical information — app version, device model, error messages — and to
+exclude comic titles, file names, page content, and any credentials or API
+keys.</p>
 
 <h2>What we don’t do</h2>
 <ul>
   <li>No user accounts or sign-in;</li>
+  <li>No in-app purchases or subscriptions — the app is entirely free and
+      contains no billing library;</li>
   <li>No advertising and no advertising SDKs or identifiers;</li>
-  <li>No analytics, telemetry, or tracking;</li>
+  <li>No analytics, telemetry, crash reporting, or tracking;</li>
   <li>No sale or sharing of personal data — the developer holds no user data to
       sell or share;</li>
   <li>No collection of location, contacts, or other device data unrelated to
-      reading comics.</li>
+      reading comics and books.</li>
 </ul>
 
 <h2>Permissions</h2>
-<p>The app requests network access for the optional features described above,
-and reads comic files that you explicitly select or import through the Android
-file picker.</p>
+<p>The app declares the following Android permissions, and nothing else:</p>
+<ul>
+  <li><strong>Internet</strong> — for the optional features and the model
+      downloads described above.</li>
+  <li><strong>Foreground service</strong> and <strong>wake lock</strong> — to
+      keep a long batch translation, or a loaded on-device translation model,
+      running while the app is in the background. Android shows a notification
+      whenever such a service is running.</li>
+  <li><strong>Notifications</strong> — the progress notification for a batch
+      translation (which names the volume being translated) and a notification
+      while the on-device model is loaded. Both are shown on your device only.
+      Android asks you before the app can show them; if you decline, the
+      features still work and the notifications are simply hidden.</li>
+  <li><strong>Vibrate</strong> — brief haptic feedback for reader gestures.</li>
+</ul>
+<p>The app requests no storage, photo, camera, microphone, location, or contacts
+permission. It reads the files you select through the Android file picker, and
+archives you copy into its own folder on external storage
+(<code>Android/data/com.fumeto.reader/files/Comics</code>), which it moves into
+your library on the next scan. Everything else it stores lives in its private
+app storage.</p>
 
 <h2>Children</h2>
 <p>Fumeto Reader Plus is a general-audience utility and is not directed at
@@ -146,6 +185,18 @@ uninstalling. For anything else, contact the email address above.</p>
 <p>If the app’s data practices change — for example, if an optional cloud
 service operated by the developer is introduced — this policy will be updated at
 this address with a new effective date before those changes take effect.</p>
+<ul>
+  <li><strong>September 4, 2026</strong> — Removed the “Purchases” section: the
+      optional paid upgrade offered by earlier versions was retired in version
+      0.7.0, and the app no longer contains a billing library. Described the
+      on-first-use model downloads introduced in version 0.7.1 (text
+      recognition and layout models now download like the translation model
+      does, rather than shipping inside the app) and named the host. Listed
+      every Android permission the app declares. Covered self-hosted
+      translation servers, e-books, unencrypted <code>http://</code> servers,
+      and linked the published source code.</li>
+  <li><strong>July 28, 2026</strong> — First published.</li>
+</ul>
 
 </body>
 </html>
