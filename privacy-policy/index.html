@@ -89,11 +89,12 @@ the device. None of this data is transmitted to the developer. You can delete
 it at any time by removing items in the app (downloaded models have their own
 delete button in Settings), clearing the app’s data in Android settings, or
 uninstalling the app.</p>
-<p>The Linux desktop version keeps everything listed above in a single folder
-in your home directory, <code>~/.local/share/com.fumeto.reader/</code>: the
+<p>The Linux desktop version keeps everything listed above in one folder in
+your home directory, <code>~/.local/share/com.fumeto.reader/</code>: the
 library index, settings, downloaded model files, encrypted credentials and the
-local diagnostic log. It writes nothing anywhere else. Deleting that folder
-together with the app file removes all of it.</p>
+local diagnostic log. The only other thing it writes is the web engine's small
+cookie store under <code>~/.cache/com.fumeto.reader/</code>. Deleting those two
+folders together with the app file removes all of it.</p>
 
 <h2>Network features you control</h2>
 <p>All network features are optional and disabled until you configure or
