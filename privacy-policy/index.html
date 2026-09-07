@@ -43,8 +43,8 @@
 
 <h1>Privacy Policy</h1>
 <p class="meta">
-  <strong>Fumeto Reader Plus</strong> (package name <code>com.fumeto.reader</code>) for Android<br>
-  Effective date: September 4, 2026 (previous version: July 28, 2026)<br>
+  <strong>Fumeto Reader Plus</strong> (package name <code>com.fumeto.reader</code>) for Android, and as a Linux desktop app (beta)<br>
+  Effective date: September 7, 2026 (previous version: September 4, 2026)<br>
   Source code: <a href="https://github.com/fumetodev/FumetoReaderPlus">github.com/fumetodev/FumetoReaderPlus</a>
 </p>
 
@@ -55,8 +55,9 @@
   data. Your comics, books, reading progress, settings, and translations stay on
   your device. The app only communicates over the network with services
   <em>you</em> explicitly configure — such as your own media server or your own
-  translation provider — and with the host it downloads its optional AI model
-  files from.</p>
+  translation provider — with the host it downloads its optional AI model
+  files from, and, in the desktop version only, with GitHub to learn whether
+  a newer release exists.</p>
 </div>
 
 <h2>Who we are</h2>
@@ -88,6 +89,11 @@ the device. None of this data is transmitted to the developer. You can delete
 it at any time by removing items in the app (downloaded models have their own
 delete button in Settings), clearing the app’s data in Android settings, or
 uninstalling the app.</p>
+<p>The Linux desktop version keeps everything listed above in a single folder
+in your home directory, <code>~/.local/share/com.fumeto.reader/</code>: the
+library index, settings, downloaded model files, encrypted credentials and the
+local diagnostic log. It writes nothing anywhere else. Deleting that folder
+together with the app file removes all of it.</p>
 
 <h2>Network features you control</h2>
 <p>All network features are optional and disabled until you configure or
@@ -124,6 +130,14 @@ confirm them. When you use them, data goes only to the destination you chose:</p
       No personal content is sent. A model file you import from your own
       storage instead is copied into the app’s private storage and is never
       uploaded anywhere.</li>
+  <li><strong>Update notice (desktop version only).</strong> The Linux desktop
+      version asks GitHub (<a href="https://api.github.com">api.github.com</a>)
+      at most once a day whether a newer release has been published, so that it
+      can show a notice with a download link. The request carries no account,
+      identifier or content — only the standard web request metadata any
+      website sees, such as your IP address — and GitHub’s privacy statement
+      applies to it. You can switch the automatic check off in Settings and
+      check by hand instead. The Android app never makes this request.</li>
 </ul>
 
 <h2>Diagnostics and error reports</h2>
@@ -131,7 +145,8 @@ confirm them. When you use them, data goes only to the destination you chose:</p
 diagnose problems. It is never transmitted automatically, and the app contains
 no crash-reporting service. If you choose to copy a diagnostic report to share
 (for example, when reporting a bug), the report is designed to contain only
-technical information — app version, device model, error messages — and to
+technical information — app version, device model (on desktop: operating
+system, graphics driver and display type), error messages — and to
 exclude comic titles, file names, page content, and any credentials or API
 keys.</p>
 
@@ -170,6 +185,10 @@ archives you copy into its own folder on external storage
 (<code>Android/data/com.fumeto.reader/files/Comics</code>), which it moves into
 your library on the next scan. Everything else it stores lives in its private
 app storage.</p>
+<p>The Linux desktop version has no permission system of this kind. It reads the
+files and folders you choose in its file dialog or drop onto its window, saves
+exports where you tell it to, and keeps its own data in the folder named
+above.</p>
 
 <h2>Children</h2>
 <p>Fumeto Reader Plus is a general-audience utility and is not directed at
@@ -186,6 +205,10 @@ uninstalling. For anything else, contact the email address above.</p>
 service operated by the developer is introduced — this policy will be updated at
 this address with a new effective date before those changes take effect.</p>
 <ul>
+  <li><strong>September 7, 2026</strong> — Added the Linux desktop version
+      (introduced in version 0.8.0 as a beta): where it stores its data, that it
+      has no permission system, and the once-a-day update check it makes to
+      GitHub, which can be switched off. Nothing changes for Android.</li>
   <li><strong>September 4, 2026</strong> — Removed the “Purchases” section: the
       optional paid upgrade offered by earlier versions was retired in version
       0.7.0, and the app no longer contains a billing library. Described the
