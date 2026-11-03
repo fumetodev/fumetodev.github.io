@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fumeto Reader Plus tour</title>
+<meta name="description" content="A 2:37 tour of Fumeto Reader Plus, a manga and comic reader for Android that translates pages on your phone.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f7f4; --fg: #111210; --muted: #55554f; --accent: #7a4dbf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111210; --fg: #f0f0ec; --muted: #a3a39b; --accent: #b39ddb; }
+  }
+  body { margin: 0 auto; padding: 2.5rem 1rem 3rem; max-width: 62rem;
+         font: 17px/1.6 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+  h1 { margin: 0 0 .25rem; font-size: 1.5rem; }
+  p { margin: 0 0 1rem; }
+  video { display: block; width: 100%; height: auto; margin: 0 0 1rem; background: #111210; }
+  a { color: var(--accent); }
+  .credit { color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<h1>Fumeto Reader Plus: the tour</h1>
+<p>The app from the shelf to comics on the web, in 2:37. The video has no sound.</p>
+<video controls playsinline preload="metadata" poster="poster.jpg" width="1920" height="1080"
+       aria-label="A silent tour of Fumeto Reader Plus on an Android phone">
+  <source src="showcase.mp4" type="video/mp4">
+  <a href="showcase.mp4">Download the video</a>
+</video>
+<p><a href="https://github.com/fumetodev/FumetoReaderPlus">Fumeto Reader Plus on GitHub</a> ·
+<a href="showcase.mp4" download>Download the video</a> (MP4, 17 MB) ·
+<a href="/privacy-policy/">Privacy Policy</a></p>
+<p class="credit">Manga: Give My Regards to Black Jack © SHUHO SATO, used under the publisher’s free secondary-use terms.
+Filmed on an Android emulator. Some waits are shortened, and a few translations are shown as the model wrote them.</p>
+</body>
+</html>
