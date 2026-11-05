@@ -44,7 +44,7 @@
 <h1>Privacy Policy</h1>
 <p class="meta">
   <strong>Fumeto Reader Plus</strong> (package name <code>com.fumeto.reader</code>) for Android, and as a Linux desktop app (beta)<br>
-  Effective date: November 3, 2026 (previous version: September 7, 2026)<br>
+  Effective date: November 4, 2026 (previous version: November 3, 2026)<br>
   Source code: <a href="https://github.com/fumetodev/FumetoReaderPlus">github.com/fumetodev/FumetoReaderPlus</a>
 </p>
 
@@ -84,10 +84,12 @@ so every statement in this policy can be checked against the code that ships.</p
   <li>AI model files you download or import for on-device translation (see
       “Component downloads”);</li>
   <li>The built-in web browser’s cookies, site storage and cache, kept apart
-      from the rest of the app’s data, and, for chapters you save from a
-      website, their title, the addresses they were read from, the site’s icon,
-      their translations and a fingerprint (a hash) of each page image — never
-      the page images themselves (see “Built-in web browser”);</li>
+      from the rest of the app’s data; the address, title and site icon of each
+      tab you leave open and each page you bookmark; and, for chapters you save
+      from a website, their title, the addresses they were read from, the
+      addresses of their page images, the site’s icon, their translations and a
+      fingerprint (a hash) of each page image — never the page images themselves
+      (see “Built-in web browser”);</li>
   <li>Local diagnostic logs (see “Diagnostics and error reports”).</li>
 </ul>
 <p>Credentials and API keys are encrypted at rest with a key that never leaves
@@ -115,8 +117,9 @@ confirm them. When you use them, data goes only to the destination you chose:</p
       encrypted on the way there; use <code>https://</code> where your server
       offers it.</li>
   <li><strong>Translation with a provider or server you choose.</strong> The
-      app can translate pages entirely on your device, and that is the default.
-      If you instead configure a translation provider — a cloud service under
+      app can translate pages entirely on your device. No provider is set up
+      when you install it, so no page content goes anywhere until you configure
+      one. If you configure a translation provider — a cloud service under
       your own API key (for example an OpenRouter account, an Anthropic API
       key, or any OpenAI-compatible endpoint), or a server you run yourself on
       your own network (for example Ollama or LM Studio) — then the pages you
@@ -128,7 +131,8 @@ confirm them. When you use them, data goes only to the destination you chose:</p
   <li><strong>Component downloads.</strong> Reading text off a page needs
       model files that are not included in the app itself: text detection and
       recognition models and a page-layout model, used by every translation
-      mode, plus the translation model you pick if you translate on-device.
+      mode, plus the translation model you pick if you translate on-device, and
+      an optional sound-effect model if you choose to download it.
       They are downloaded from Hugging Face
       (<a href="https://huggingface.co">huggingface.co</a>) only after you
       confirm the download — the first time you translate a page, or when you
@@ -148,7 +152,11 @@ confirm them. When you use them, data goes only to the destination you chose:</p
       page images from that website, with the browser’s cookies for it, and
       keeps them only while the chapter is open; translating them works like
       any other page (see above), so with a translation provider they are sent
-      to that provider. To block ads, the browser downloads two public
+      to that provider. Opening a saved chapter downloads its page images again
+      from the addresses it remembers and, if those no longer work, loads its
+      page on the website. Tabs you leave open come back when you restart the
+      app, and a tab’s page is loaded only when you open it, so no website is
+      contacted at launch. To block ads, the browser downloads two public
       block lists — EasyList (<a href="https://easylist.to">easylist.to</a>)
       and AdGuard’s DNS filter
       (<a href="https://adguardteam.github.io">adguardteam.github.io</a>) —
@@ -157,7 +165,8 @@ confirm them. When you use them, data goes only to the destination you chose:</p
       Browsing protection, which checks addresses against Google’s list of
       dangerous sites, is on. The browser’s cookies, site storage and cache are
       kept on your device, separate from the rest of the app’s data, and
-      Settings → Libraries → Web browser clears them. The developer receives
+      Settings → Libraries → Web browser clears them and closes your open tabs;
+      bookmarks and saved chapters stay until you delete them. The developer receives
       none of this.</li>
   <li><strong>Update notice (desktop version only).</strong> The Linux desktop
       version asks GitHub (<a href="https://api.github.com">api.github.com</a>)
@@ -234,6 +243,13 @@ uninstalling. For anything else, contact the email address above.</p>
 service operated by the developer is introduced — this policy will be updated at
 this address with a new effective date before those changes take effect.</p>
 <ul>
+  <li><strong>November 4, 2026</strong> — Updated for the tabs and bookmarks the
+      browser gains in the next app release: what is kept on your device for
+      them, that a saved chapter opens from the page-image addresses it
+      remembers, and that clearing browsing data closes your tabs. Named the
+      optional sound-effect model download. Corrected a statement that on-device
+      translation is the default: no provider is set up when you install the
+      app, so nothing is sent until you configure one.</li>
   <li><strong>November 3, 2026</strong> — Added the built-in web browser
       introduced in version 0.9.5: the websites and search engine it contacts,
       the page images it downloads when you read a chapter from a website, the
